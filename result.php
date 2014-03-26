@@ -3,7 +3,7 @@
 	
 	//$_REQUEST['url'];
 	//print ($url . "\n\n");
-	
+	//require('config.php');
 	/* Connect to an ODBC database using driver invocation */
 	$dsn = 'mysql:dbname=link_shortener;host=localhost';
 	$user = 'public';
@@ -66,6 +66,7 @@
 			} else {
 				$message = "Data inserted! Access code " . $uniqueKey;
 				$shortLink = "http://localhost:8888/link-shortener/redirect.php?q=" . $uniqueKey;
+				//$shortLink = "http://localhost:8888/link-shortener/" . $uniqueKey;
 			}
 		} else {
 			$message = "Could not find a unique code :(  Please try again soon!";
@@ -184,6 +185,7 @@
         	Try your new link!<br><br>
             <a href="<?php echo $shortLink; ?>"><?php echo $shortLink; ?></a>
         </p>
+            
         
         <!--
         <form action="index.php" method="post">
