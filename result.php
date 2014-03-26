@@ -36,10 +36,10 @@
 		// if a unique access_code is found, insert it
 		if ($unique) {
 			print "Code is unique! About to insert access_code " . $uniqueKey;
-			$stmt = $dbh->prepare("INSERT INTO link (access_code, url, date_created) VALUES (:access_code, :url, :date_created);");
+			$stmt = $dbh->prepare("INSERT INTO link (access_code, url) VALUES (:access_code, :url);");
 			$stmt->bindParam(':access_code', $uniqueKey);
 			$stmt->bindParam(':url', $_REQUEST['url']);
-			$stmt->bindParam(':date_created', date());
+			//$stmt->bindParam(':date_created', date());
 			
 			print "Preparing stmt";
 	//		$stmt = "INSERT INTO link (access_code, url, date_created) VALUES ('" . $uniqueKey . "', '" . $_REQUEST['url'] . "', getdate());";
@@ -65,9 +65,10 @@
 				$message = "Data did not insert! Access code " . $uniqueKey;
 			} else {
 				$message = "Data inserted! Access code " . $uniqueKey;
+				$shortLink = "http://localhost:8888/link-shortener/redirect.php?q=" . $uniqueKey;
 			}
 		} else {
-			print "Could not find a unique code :(  Please try again soon!";
+			$message = "Could not find a unique code :(  Please try again soon!";
 		}
 		$dbh = null;
 	} catch (PDOException $e) {
@@ -179,6 +180,10 @@
         
         <p><?php echo $message; ?></p>
 	    <p><a href="<?php echo $_REQUEST['url']; ?>"><?php echo $_REQUEST['url']; ?></a></p>
+        <p>
+        	Try your new link!<br><br>
+            <a href="<?php echo $shortLink; ?>"><?php echo $shortLink; ?></a>
+        </p>
         
         <!--
         <form action="index.php" method="post">
