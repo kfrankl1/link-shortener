@@ -18,9 +18,8 @@
 		//echo "After query execute";
 		
 		
-		if ($redirect == null)
-		{
-			$redirect = "Is null :(";
+		if ($redirect == null) {
+			echo "Whoops! Something went wrong... This link may not be in service anymore.";
 		}
 		
 		$dbh = null;

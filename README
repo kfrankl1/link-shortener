@@ -1,1 +1,13 @@
-The user enters a URL and this tool returns a bit.ly-esque short link that directs to the inputted URL.
+The user enters a URL and this tool returns a bit.ly-esque short link that redirects to the inputted URL.
+
+I'm using MAMP, so the idea of a short link is sort of lost when your "domain" is "localhost:8888/link-shortener", but if you had an actually short url, like short.co, then this would be more useful.
+
+-----SETUP-----
+
+Easy peasy!
+
+Copy the files into your site and set the redirect.php vars $dsn, $user, and $password to the correct values.  Use setup.sql to create the link table, or if you want to use your own modifications, make sure the edit the $stmt vars in index.php and redirect.php. Modify .htaccess based on your own directories.
+
+---------------
+
+This is just some practice for me, so feel free to suggest any improvements or to use in your own project.
