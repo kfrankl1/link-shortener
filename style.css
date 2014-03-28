@@ -1,0 +1,23 @@
+body {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 24px;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.url {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 24px;
+	width: 100%;
+}
+
+.button {
+	font-size: 18px;
+}
+
+.destination {
+	font-size: 18px;	
+}
