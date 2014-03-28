@@ -1,6 +1,6 @@
 The user enters a URL and this tool returns a bit.ly-esque short link that redirects to the inputted URL.
 
-I'm using MAMP, so the idea of a short link is sort of lost when your "domain" is "localhost:8888/link-shortener", but if you had an actually short url, like short.co, then this would be more useful.
+I'm using MAMP, so the idea of a short link is sort of lost when your "domain" is "localhost:8888/link-shortener", but if you had an actually short domain, like short.co, then this would be more useful.
 
 -----SETUP-----
 
